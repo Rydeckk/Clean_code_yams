@@ -1,5 +1,4 @@
 export function yamsResultRoll(rolls: Array<number>): number {
-    let rollIsYams = true
 
     for(let i = 0; i < rolls.length; i++) {
         let countDiceValueAppear = 1
@@ -14,18 +13,9 @@ export function yamsResultRoll(rolls: Array<number>): number {
         }
         if(countDiceValueAppear === 4) {
             return 35
+        } else if (countDiceValueAppear === 5) {
+            return 50
         }
-    }
-
-    for(let i = 1; i < rolls.length; i++) {
-        if(rolls[i] !== rolls[0]) {
-            rollIsYams = false
-            break
-        }
-    }
-
-    if(rollIsYams === true) {
-        return 50
     }
 
     return rolls.reduce((sumDices, currentDiceValue) => sumDices + currentDiceValue, 0);

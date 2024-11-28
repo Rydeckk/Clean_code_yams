@@ -14,6 +14,11 @@ export function yamsResultRoll(rolls: Array<number>): number {
 
     for (const valueDice in valueDicePossible) {
         if(valueDicePossible[valueDice] === 3) {
+            for(const valueDice in valueDicePossible) {
+                if(valueDicePossible[valueDice] === 2) {
+                    return 30
+                }
+            }
             return 28
         } else if(valueDicePossible[valueDice] === 4) {
             return 35

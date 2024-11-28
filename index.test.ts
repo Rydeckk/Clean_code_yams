@@ -9,6 +9,7 @@ describe("bestResultRolls", () => {
         { input: [[2,2,2,4,4]], output: 30},
         { input: [[2,1,5,4,3]], output: 40},
         { input: [[2,2,2,1,4],[2,1,5,4,3]], output: 40},
+        { input: [[2,2,2,1,4],[2,1,5,4,3], [2,2,2,2,2]], output: 50},
     ])
     ('Envoi un tableau de lancers $input et doit obtenir $output', ({input, output}) => {
         expect(bestResultRolls(input)).toBe(output);

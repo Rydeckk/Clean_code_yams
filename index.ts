@@ -11,7 +11,9 @@ export function yamsResultRoll(rolls: Array<number>): number {
                 countDiceValueAppear++
             }
         }
-        if(countDiceValueAppear === 4) {
+        if(countDiceValueAppear === 3) {
+            return 28
+        } else if(countDiceValueAppear === 4) {
             return 35
         } else if (countDiceValueAppear === 5) {
             return 50

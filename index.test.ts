@@ -1,7 +1,11 @@
-import { sumDices  } from ".";
+import { yamsResultRoll  } from ".";
 
 describe("romanNumber", () => {
-    it('Envoi un tableau de lancers [2,4,6,2,4] et doit obtenir 18', () => {
-        expect(sumDices([2,4,6,2,4])).toBe(18);
+    it.each([
+        { input: [2,4,6,2,4], output: 18},
+        { input: [2,2,2,2,2], output: 50},
+    ])
+    ('Envoi un tableau de lancers $input et doit obtenir $output', ({input, output}) => {
+        expect(yamsResultRoll(input)).toBe(output);
       })
 });

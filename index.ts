@@ -1,21 +1,23 @@
 export function yamsResultRoll(rolls: Array<number>): number {
+    const valueDicePossible: Record<number, number> = {
+        1: 0,
+        2: 0,
+        3: 0,
+        4: 0,
+        5: 0,
+        6: 0
+    }
 
-    for(let i = 0; i < rolls.length; i++) {
-        let countDiceValueAppear = 1
-        for(let j = 0; j < rolls.length; j++) {
-            if(j === i) {
-                continue
-            }
+    rolls.forEach((currentValueDice) => {
+        valueDicePossible[currentValueDice]++
+    })
 
-            if(rolls[j] === rolls[i]) {
-                countDiceValueAppear++
-            }
-        }
-        if(countDiceValueAppear === 3) {
+    for (const valueDice in valueDicePossible) {
+        if(valueDicePossible[valueDice] === 3) {
             return 28
-        } else if(countDiceValueAppear === 4) {
+        } else if(valueDicePossible[valueDice] === 4) {
             return 35
-        } else if (countDiceValueAppear === 5) {
+        } else if (valueDicePossible[valueDice] === 5) {
             return 50
         }
     }

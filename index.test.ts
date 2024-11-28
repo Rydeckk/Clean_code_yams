@@ -6,6 +6,7 @@ describe("romanNumber", () => {
         { input: [2,2,2,2,2], output: 50},
         { input: [2,2,2,2,4], output: 35},
         { input: [2,2,2,1,4], output: 28},
+        { input: [2,2,2,4,4], output: 30},
     ])
     ('Envoi un tableau de lancers $input et doit obtenir $output', ({input, output}) => {
         expect(yamsResultRoll(input)).toBe(output);
